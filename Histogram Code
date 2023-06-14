@@ -1,0 +1,17 @@
+"""This program will create a histogram of the data in a .csv file using pandas"""
+
+#Importing Relevant Modules
+import numpy as np
+import matplotlib.pyplot as py
+import pandas as pd
+import pylab as pl
+
+col_list = "Hard Drive Size (in GB)" 
+data = 'https://github.com/UVADS/orientation-technical/blob/main/content/dat/2023-06-13-survey.csv?raw=true'
+df = pd.read_csv(data,index_col = 0)
+print(df.head(5))
+
+hist = df.hist(column = "CPU Number of Cores (int)", bins=6)
+pl.title("CPU Cores")
+pl.xlabel("Number of Cores")
+pl.ylabel("Individual Computers")
